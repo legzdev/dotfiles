@@ -1,13 +1,18 @@
 add_newline = false
 
+[character]
+format = '$symbol '
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
+
+[cmd_duration]
+format = ' [⏱ $duration ]($style) '
+
 [aws]
 format = ' [$symbol($profile)(\($region\))(\[$duration\])]($style) '
 
 [cmake]
 format = ' [$symbol($version)]($style) '
-
-[cmd_duration]
-format = ' [⏱ $duration ]($style) '
 
 [cobol]
 format = ' [$symbol($version)]($style) '

@@ -7,29 +7,27 @@ end
 
 switch $(uname -o)
     case Android
-        set -l android_uid 0
-        set -l android_storage = emulated
+        set -g android_uid 0
+        set -g android_storage "emulated"
 
-        set -l videos_dir "/storage/$android_storage/$android_uid/Videos"
+        set -g videos_dir "/storage/$android_storage/$android_uid/Movies"
 
     case GNU/Linux
         if test -f $(which xdg-user-dir)
-            set -l videos_dir $(xdg-user-dir VIDEOS)
+            set -g videos_dir $(xdg-user-dir VIDEOS)
 
         else if test -n $HOME
-            set -l videos_dir "$HOME/Videos"
+            set -g videos_dir "$HOME/Videos"
         end
 end
 
 
 if test ! -n "$videos_dir"
-    set -l videos_dir "$HOME/Videos"
+    set -g videos_dir "$HOME/Videos"
 end
 
-printf "videos dir: $videos_dir"
-
 if test ! -d "$videos_dir"
-    mkdir -p "$videos_dir"
+   # mkdir -p "$videos_dir"
 end
 
 

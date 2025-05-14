@@ -1,21 +1,10 @@
 # ensure that all shell utilities are in english instead of the system language
 set -x LANG "en_US.UTF-8"
+set -x EDITOR "nvim"
 
-# Android SDK
-set -x ANDROID_HOME "$HOME/.android/sdk"
-set -x PATH "$ANDROID_HOME/cmdline-tools/latest/bin:$PATH"
-set -x PATH "$ANDROID_HOME/emulator:$PATH"
-set -x PATH "$ANDROID_HOME/platform-tools:$PATH"
-
-# extends PATH
-set -x PNPM_HOME "$HOME/.local/share/pnpm"
-set -x BUN_INSTALL "$HOME/.bun"
-set -x PATH "$BUN_INSTALL/bin:$PATH"
-set -x PATH "$HOME/.local/bin:$PATH"
-set -x PATH "$HOME/.go/bin:$PATH"
-set -x PATH "$PNPM_HOME:$PATH"
-
-source /opt/asdf-vm/asdf.fish
+if test -f /opt/asdf-vm/asdf.fish
+	source /opt/asdf-vm/asdf.fish
+end
 
 # aliases
 alias cat="bat -pp"
@@ -50,10 +39,10 @@ alias pm-autoremove="pm-autoremove-list | sudo pacman -Rns -"
 alias pm-clean="sudo pacman -Sc"
 alias pm-rmcache="sudo pacman -Scc"
 
-
 # init fish shell
 if status is-interactive
-    set -g fish_greeting
+	set -g fish_greeting
 
-    starship init fish | source
+	starship init fish | source
 end
+
