@@ -52,6 +52,7 @@ do_backup() {
 	backup "$XDG_CONFIG_HOME/nvim/"
 	backup "$XDG_CONFIG_HOME/pip/"
 	backup "$XDG_CONFIG_HOME/polybar/"
+	backup "$XDG_CONFIG_HOME/ruff/"
 	backup "$XDG_CONFIG_HOME/starship.toml"
 
 	backup "$PREFIX/etc/docker/daemon.json"
