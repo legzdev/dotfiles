@@ -1,5 +1,5 @@
 local actions = {
-	{ name = "Conform: Format", command = ":lua require('conform').format({ async = true})" },
+	{ name = "Format Buffer", command = ":lua require('conform').format({ async = true})" },
 	{ name = "LSP: Hover", command = ":lua vim.lsp.buf.hover()" },
 	{ name = "LSP: Definition", command = ":lua vim.lsp.buf.definition()" },
 	{ name = "LSP: Declaration", command = ":lua vim.lsp.buf.declaration()" },
@@ -8,7 +8,6 @@ local actions = {
 	{ name = "LSP: References", command = ":lua vim.lsp.buf.references()" },
 	{ name = "LSP: Signature Help", command = ":lua vim.lsp.buf.signature_help()" },
 	{ name = "LSP: Rename", command = ":lua vim.lsp.buf.rename()" },
-	{ name = "LSP: Format", command = ":lua vim.lsp.buf.format({ async = true})" },
 	{ name = "LSP: Code Action", command = ":lua vim.lsp.buf.code_action()" },
 	{ name = "TODO: Search", command = ":TodoTelescope" },
 	{ name = "TODO: Locations", command = ":TodoLocList" },

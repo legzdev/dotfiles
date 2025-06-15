@@ -30,7 +30,12 @@ return {
 			lsp_format = "fallback",
 		},
 		formatters_by_ft = {
+			css = { "biome" },
 			go = f({ "goimports", { "gofumpt", "gofmt" } }),
+			html = { "biome" },
+			javascript = { "biome" },
+			json = { "biome" },
+			jsonc = { "biome" },
 			lua = { "stylua" },
 			python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
 		},

@@ -35,6 +35,7 @@ require("lazy").setup({
 	},
 	spec = {
 		{ import = "plugins" },
+		"neovim/nvim-lspconfig",
 	},
 	ui = {
 		size = { width = 1.0, height = 1.0 },
