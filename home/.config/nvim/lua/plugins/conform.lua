@@ -30,6 +30,7 @@ return {
 			lsp_format = "fallback",
 		},
 		formatters_by_ft = {
+			astro = { "biome" },
 			css = { "biome" },
 			go = f({ "goimports", { "gofumpt", "gofmt" } }),
 			html = { "biome" },
@@ -38,6 +39,7 @@ return {
 			jsonc = { "biome" },
 			lua = { "stylua" },
 			python = { "ruff_fix", "ruff_organize_imports", "ruff_format" },
+			typescript = { "biome" },
 		},
 	},
 }
