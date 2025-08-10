@@ -1,12 +1,19 @@
 local function save_buffer()
-	local name = vim.api.nvim_buf_get_name(0)
-	if name == "" then
-		vim.ui.input({ prompt = "Save buffer as: " }, function(input)
-			vim.cmd("write " .. input)
-		end)
-	else
+	local buf_id = 0 -- current buffer
+	local name = vim.api.nvim_buf_get_name(buf_id)
+
+	if name ~= "" then
 		vim.cmd("write")
+		return
 	end
+
+	vim.ui.input({ prompt = "Save buffer as: " }, function(input)
+		if input == nil then
+			return
+		end
+
+		vim.cmd("write " .. input)
+	end)
 end
 
 local function config(_, opts)
