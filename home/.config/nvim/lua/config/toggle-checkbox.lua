@@ -22,4 +22,7 @@ function M.toggle_checkbox()
 	end
 end
 
+vim.api.create_user_command("MDToggleCheckbox", M.toggle_checkbox)
+vim.keymap.set("n", "<leader>mt", "<cmd>MDToggleCheckbox<CR>", { desc = "Toggle Markdown Checkbox" })
+
 return M

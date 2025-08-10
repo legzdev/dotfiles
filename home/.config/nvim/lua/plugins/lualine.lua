@@ -8,7 +8,7 @@ local function config()
 			ignore_focus = {},
 			always_divide_middle = true,
 			always_show_tabline = true,
-			globalstatus = false,
+			globalstatus = true,
 			refresh = {
 				statusline = 1000,
 				tabline = 1000,
@@ -40,7 +40,7 @@ local function config()
 				},
 			},
 			lualine_b = { "branch", "diff" },
-			lualine_c = { "diagnostics" },
+			lualine_c = { "diagnostics", "lsp_progress" },
 			lualine_x = { "encoding", "fileformat", "filetype" },
 			lualine_y = {},
 			lualine_z = {
@@ -54,7 +54,6 @@ local function config()
 				},
 			},
 		},
-		extensions = { "nvim-tree" },
 	})
 end
 
@@ -62,6 +61,7 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
+		"arkav/lualine-lsp-progress",
 	},
 	config = config,
 }

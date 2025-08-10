@@ -1,7 +1,9 @@
 local function config()
+	require("luasnip.loaders.from_vscode").lazy_load()
+	local luasnip = require("luasnip")
+
 	local cmp = require("cmp")
 	local lspkind = require("lspkind")
-	local luasnip = require("luasnip")
 
 	cmp.setup({
 		sources = cmp.config.sources({
@@ -64,9 +66,15 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-buffer",
-		"L3MON4D3/LuaSnip",
-		"saadparwaiz1/cmp_luasnip",
 		"onsails/lspkind.nvim",
+		{
+			"L3MON4D3/LuaSnip",
+			build = "make install_jsregexp",
+			dependencies = {
+				"rafamadriz/friendly-snippets",
+			},
+		},
+		"saadparwaiz1/cmp_luasnip",
 	},
 	config = config,
 }

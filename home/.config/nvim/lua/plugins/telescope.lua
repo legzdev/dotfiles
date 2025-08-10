@@ -14,6 +14,9 @@ local function config(_, opts)
 	vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 	vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 	vim.keymap.set("n", "<leader>fk", builtin.keymaps, { desc = "Telescope find keymaps" })
+	vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "Telescope LSP references" })
+
+	telescope.load_extension("ui-select")
 end
 
 return {
@@ -22,6 +25,14 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"jonarrien/telescope-cmdline.nvim",
+		"nvim-telescope/telescope-ui-select.nvim",
 	},
 	config = config,
+	opts = {
+		pickers = {
+			find_files = {
+				find_command = { "fd", "--type=file", "--hidden", "--no-ignore", "--exclude", ".git" },
+			},
+		},
+	},
 }

@@ -18,9 +18,13 @@ vim.opt.listchars = {
 	space = "·",
 	nbsp = "-",
 }
+
+vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = false
 vim.opt.shiftwidth = 4
+-- vim.opt.spell = true
+--vim.opt.spelllang = "en,es"
 vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.termguicolors = true
